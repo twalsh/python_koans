@@ -17,13 +17,10 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    [a, b, c] = sorted([a,b,c])
-    if a == b:
-        if b == c:
-            return 'equilateral'
-        else:
-            return 'isosceles'
-    elif b == c:
+    unique_sides = len({ a, b, c })
+    if unique_sides == 1:
+        return 'equilateral'
+    elif unique_sides == 2:
         return 'isosceles'
     else:
         return 'scalene'
